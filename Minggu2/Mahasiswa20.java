@@ -16,7 +16,11 @@ public class Mahasiswa20 {
     }
 
     void updateIPK(double IPKBaru) {
-        ipk = IPKBaru;
+        if (ipk >= 0.0 && ipk >= 4.00 ) {
+            ipk = IPKBaru;
+        } else {
+            System.out.println("IPK tidak valid. Harus antara 0.0 dan 4.0.");
+        }
     }
 
     String nilaiKinerja(double ipk) {
@@ -31,4 +35,14 @@ public class Mahasiswa20 {
         }
     }
     
+    public Mahasiswa20() {
+        // Konstruktor default
+    }
+
+    public Mahasiswa20(String nama, String nim, String kelas, double ipk) {
+        this.nama = nama; // Konstruktor Parameter
+        this.nim = nim; // menggunakan this untuk menyimpan nilai parameter ke atribut kelas
+        this.kelas = kelas;
+        this.ipk = ipk;
+    }
 }
